@@ -1,7 +1,7 @@
 <title>Jessie 生日餐牌</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&family=Noto+Serif+TC:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
 
 <style>
 :root{
@@ -35,16 +35,16 @@ body{
   background:var(--table);
   background-image:radial-gradient(120% 80% at 50% 0%, #1D3025 0%, var(--table) 45%, var(--table-deep) 100%);
   color:var(--ink);
-  font-family:"EB Garamond","Noto Serif TC",Georgia,"Times New Roman",serif;
+  font-family:"EB Garamond","Noto Sans TC",Georgia,"Times New Roman",serif;
   font-size:17px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  padding:10px 8px 96px;
+  padding:10px 4px 96px;
 }
 @media (min-width:720px){ body{padding:34px 24px 120px; font-size:18px;} }
 
-.zh{ font-family:"Noto Serif TC","EB Garamond",serif; }
-.hand{ font-family:"Caveat","Noto Serif TC",cursive; }
+.zh{ font-family:"Noto Sans TC","EB Garamond",sans-serif; }
+.hand{ font-family:"Caveat","Noto Sans TC",cursive; }
 
 /* ---------- the card + its hand-drawn frame ---------- */
 .card{
@@ -54,30 +54,36 @@ body{
   background:var(--paper);
   background-image:var(--grain);
   box-shadow:0 24px 60px -18px rgba(0,0,0,.62), 0 2px 0 rgba(255,255,255,.05);
-  padding:56px 22px 48px;
+  padding:56px 38px 50px;
 }
-@media (min-width:720px){ .card{padding:78px 66px 64px;} }
+@media (min-width:720px){ .card{padding:88px 88px 76px;} }
 
 .frame{position:absolute; inset:0; pointer-events:none;}
 .frame span{position:absolute; display:block;}
-.frame .t,.frame .b{left:0; right:0; height:22px; background-image:var(--tickH); background-repeat:repeat-x; background-size:36px 22px;}
-.frame .t{top:6px} .frame .b{bottom:6px}
-.frame .l,.frame .r{top:0; bottom:0; width:22px; background-image:var(--tickV); background-repeat:repeat-y; background-size:22px 36px;}
-.frame .l{left:6px} .frame .r{right:6px}
+.frame .t,.frame .b{left:0; right:0; height:14px; background-image:var(--tickH); background-repeat:repeat-x; background-size:24px 14px;}
+.frame .t{top:3px} .frame .b{bottom:3px}
+.frame .l,.frame .r{top:0; bottom:0; width:14px; background-image:var(--tickV); background-repeat:repeat-y; background-size:14px 24px;}
+.frame .l{left:3px} .frame .r{right:3px}
 
-.frame .rt,.frame .rb{left:38px; right:38px; height:6px; background-image:var(--ruleH); background-repeat:repeat-x; background-size:120px 6px;}
-.frame .rt{top:31px} .frame .rb{bottom:31px}
-.frame .rl,.frame .rr{top:38px; bottom:38px; width:6px; background-image:var(--ruleV); background-repeat:repeat-y; background-size:6px 120px;}
-.frame .rl{left:31px} .frame .rr{right:31px}
+.frame .rt,.frame .rb{left:22px; right:22px; height:6px; background-image:var(--ruleH); background-repeat:repeat-x; background-size:120px 6px;}
+.frame .rt{top:15px} .frame .rb{bottom:15px}
+.frame .rl,.frame .rr{top:22px; bottom:22px; width:6px; background-image:var(--ruleV); background-repeat:repeat-y; background-size:6px 120px;}
+.frame .rl{left:15px} .frame .rr{right:15px}
 
-.frame .c{width:42px; height:42px; background-image:var(--loop); background-size:100% 100%; background-repeat:no-repeat;}
-.frame .c1{top:29px; left:29px}
-.frame .c2{top:29px; right:29px; transform:scaleX(-1)}
-.frame .c3{bottom:29px; left:29px; transform:scaleY(-1)}
-.frame .c4{bottom:29px; right:29px; transform:scale(-1)}
+.frame .c{width:28px; height:28px; background-image:var(--loop); background-size:100% 100%; background-repeat:no-repeat;}
+.frame .c1{top:13px; left:13px}
+.frame .c2{top:13px; right:13px; transform:scaleX(-1)}
+.frame .c3{bottom:13px; left:13px; transform:scaleY(-1)}
+.frame .c4{bottom:13px; right:13px; transform:scale(-1)}
 
 @media (min-width:720px){
+  .frame .t,.frame .b{height:22px; background-size:36px 22px}
+  .frame .t{top:6px} .frame .b{bottom:6px}
+  .frame .l,.frame .r{width:22px; background-size:22px 36px}
+  .frame .l{left:6px} .frame .r{right:6px}
+  .frame .rt,.frame .rb{left:40px; right:40px}
   .frame .rt{top:33px} .frame .rb{bottom:33px}
+  .frame .rl,.frame .rr{top:40px; bottom:40px}
   .frame .rl{left:33px} .frame .rr{right:33px}
   .frame .c{width:52px;height:52px}
   .frame .c1{top:31px;left:31px} .frame .c2{top:31px;right:31px}
@@ -99,31 +105,35 @@ h1{
 }
 .name{ display:block; font-family:"Caveat",cursive; font-size:clamp(2.6rem,13vw,4.4rem); line-height:.95; color:var(--claret); margin-top:2px;}
 .cover .note{
-  font-family:"Caveat","Noto Serif TC",cursive;
+  font-family:"Caveat","Noto Sans TC",cursive;
   word-break:keep-all;
-  font-size:clamp(1.25rem,5.2vw,1.6rem); color:var(--sepia);
-  margin:14px auto 0; max-width:34ch; line-height:1.45;
+  font-size:clamp(1.02rem,3.9vw,1.22rem); color:var(--sepia);
+  margin:16px auto 0; max-width:34ch; line-height:1.5;
+}
+.date{
+  font-family:"Marcellus",serif; font-size:.72rem; letter-spacing:.36em;
+  text-transform:uppercase; color:var(--pine); margin:14px 0 0; padding-left:.36em;
 }
 .dash{width:64px;height:6px;margin:22px auto 0;background-image:var(--ruleH);background-size:120px 6px;background-repeat:repeat-x;opacity:.75}
 
 /* ---------- sections ---------- */
 section{margin-top:46px}
-.sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px}
+.sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:4px}
 .numeral{
-  font-family:"Noto Serif TC",serif; font-size:1rem; color:var(--paper);
+  font-family:"Marcellus",serif; font-size:.98rem; color:var(--paper);
   background:var(--pine); width:28px; height:28px; flex:0 0 28px;
   display:flex; align-items:center; justify-content:center; border-radius:50%;
   transform:rotate(-3deg);
 }
 .sec-head h2{
-  font-family:"Noto Serif TC",serif; font-weight:600;
-  font-size:clamp(1.35rem,5.4vw,1.75rem); margin:0; color:var(--pine); letter-spacing:.04em;
+  font-family:"Marcellus",serif; font-weight:400;
+  font-size:clamp(1.4rem,5.6vw,1.85rem); margin:0; color:var(--pine); letter-spacing:.01em;
 }
-.sec-head .en{
-  font-family:"Marcellus",serif; font-size:.68rem; letter-spacing:.28em;
-  text-transform:uppercase; color:var(--ink-faint); margin-left:auto; white-space:nowrap;
+.sec-head .zh-label{
+  font-family:"Noto Sans TC",sans-serif; font-weight:500; font-size:.82rem; letter-spacing:.16em;
+  color:var(--ink-faint); margin-left:auto; white-space:nowrap;
 }
-.sec-sub{margin:2px 0 20px 40px; color:var(--ink-soft); font-size:.95rem}
+.sec-sub{margin:4px 0 20px 40px; color:var(--ink-soft); font-size:.95rem; font-family:"EB Garamond",serif; font-style:italic}
 
 .options{display:flex; flex-direction:column; gap:18px}
 
@@ -131,7 +141,7 @@ section{margin-top:46px}
 .opt{
   position:relative; display:block; width:100%; text-align:left;
   background:transparent; border:1.5px solid rgba(122,90,46,.34);
-  padding:20px 18px 20px; cursor:pointer; font:inherit; color:inherit;
+  padding:20px 16px; cursor:pointer; font:inherit; color:inherit;
   transition:border-color .18s ease, background-color .18s ease, transform .18s ease;
 }
 @media (min-width:720px){ .opt{padding:26px 28px} }
@@ -139,7 +149,14 @@ section{margin-top:46px}
 .opt:focus-visible{outline:3px solid var(--pine); outline-offset:3px}
 .opt[aria-pressed="true"]{border-color:var(--pine); border-width:1.5px; background:rgba(226,235,222,.62)}
 
-.opt-top{display:flex; align-items:flex-start; gap:14px}
+.opt-top{display:flex; align-items:flex-start; gap:14px; flex-wrap:wrap}
+.opt-top > div{flex:1 1 0; min-width:0}
+@media (max-width:560px){
+  .badge{width:32px; height:32px; font-size:1.15rem}
+  .opt-top{gap:10px}
+  .opt .price{order:3; width:100%; text-align:right; padding-top:0; margin-top:8px}
+  .bullets{padding-left:26px}
+}
 .badge{
   position:relative; flex:0 0 auto; width:42px; height:42px;
   display:flex; align-items:center; justify-content:center;
@@ -150,8 +167,12 @@ section{margin-top:46px}
 .opt[aria-pressed="true"] .badge .ring{opacity:1}
 
 .opt h3{
-  font-family:"Noto Serif TC",serif; font-weight:600;
-  font-size:1.12rem; margin:6px 0 2px; line-height:1.4; color:var(--ink);
+  font-family:"EB Garamond",serif; font-weight:500;
+  font-size:1.28rem; margin:5px 0 1px; line-height:1.3; color:var(--ink);
+}
+.opt .zh-title{
+  font-family:"Noto Sans TC",sans-serif; font-size:.85rem; line-height:1.55;
+  color:var(--sepia); margin:0;
 }
 .opt .sub{font-family:"Marcellus",serif; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); margin:0}
 .opt .price{
@@ -159,10 +180,10 @@ section{margin-top:46px}
   margin-left:auto; padding-top:8px; white-space:nowrap; font-variant-numeric:tabular-nums;
 }
 
-.bullets{list-style:none; margin:14px 0 0; padding:0 0 0 56px; display:flex; flex-direction:column; gap:9px}
-.bullets li{position:relative; font-family:"Noto Serif TC",serif; font-size:1rem; line-height:1.55}
-.bullets li::before{content:"✦"; position:absolute; left:-20px; top:0; color:var(--sepia-pale); font-size:.8rem}
-.bullets .en{display:block; font-family:"EB Garamond",serif; font-style:italic; font-size:.9rem; color:var(--ink-soft); margin-top:1px}
+.bullets{list-style:none; margin:14px 0 0; padding:0 0 0 34px; display:flex; flex-direction:column; gap:9px}
+.bullets li{position:relative; font-family:"EB Garamond",serif; font-size:1.02rem; line-height:1.45}
+.bullets li::before{content:"✦"; position:absolute; left:-20px; top:2px; color:var(--sepia-pale); font-size:.8rem}
+.bullets .tc{display:block; font-family:"Noto Sans TC",sans-serif; font-size:.85rem; color:var(--sepia); margin-top:2px; line-height:1.5}
 
 /* ---------- menu (courses) ---------- */
 .menu{margin:18px 0 0; padding:18px 0 0; border-top:1px solid rgba(122,90,46,.22)}
@@ -170,18 +191,18 @@ section{margin-top:46px}
 .courses{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px}
 .courses li{padding-left:16px; border-left:1px solid rgba(122,90,46,.24)}
 .courses .fr{font-family:"EB Garamond",serif; font-size:.99rem; line-height:1.38; color:var(--ink)}
-.courses .tc{display:block; font-family:"Noto Serif TC",serif; font-size:.92rem; color:var(--sepia); margin-top:2px; line-height:1.5}
+.courses .tc{display:block; font-family:"Noto Sans TC",sans-serif; font-size:.87rem; color:var(--sepia); margin-top:2px; line-height:1.5}
 .courses .supp{display:inline-block; font-family:"Marcellus",serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--claret); border:1px solid rgba(123,34,51,.35); padding:1px 6px; margin-top:5px}
 .courses li.or{border-left:none; padding-left:0; font-family:"Marcellus",serif; font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-faint); margin:-4px 0 -4px 16px}
 
 .extras{margin:16px 0 0; padding:13px 15px; background:rgba(240,232,212,.62); border:1px solid rgba(122,90,46,.2)}
-.extras p{margin:0 0 8px; font-family:"Noto Serif TC",serif; font-size:.86rem; color:var(--pine)}
+.extras p{margin:0 0 8px; font-family:"Noto Sans TC",serif; font-size:.86rem; color:var(--pine)}
 .extras dl{margin:0; display:grid; grid-template-columns:1fr auto; gap:5px 14px; font-size:.9rem}
 .extras dt{font-family:"EB Garamond",serif}
-.extras dt span{display:block; font-family:"Noto Serif TC",serif; font-size:.8rem; color:var(--ink-soft)}
+.extras dt span{display:block; font-family:"Noto Sans TC",serif; font-size:.8rem; color:var(--ink-soft)}
 .extras dd{margin:0; font-family:"Marcellus",serif; color:var(--claret); text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
 
-.fineprint{margin:12px 0 0; font-size:.8rem; color:var(--ink-faint); font-family:"Noto Serif TC",serif; line-height:1.5}
+.fineprint{margin:12px 0 0; font-size:.8rem; color:var(--ink-faint); font-family:"Noto Sans TC",serif; line-height:1.5}
 .venue{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 0; font-size:.78rem; color:var(--ink-soft)}
 .venue a{color:var(--pine); text-decoration-color:rgba(20,92,51,.4); text-underline-offset:3px}
 .venue .tag{font-family:"Marcellus",serif; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(176,141,63,.5); padding:2px 7px}
@@ -189,19 +210,20 @@ section{margin-top:46px}
 /* ---------- summary ---------- */
 .summary{margin-top:52px; padding:26px 20px; border:1.5px solid var(--pine); position:relative; background:rgba(226,235,222,.42)}
 @media (min-width:720px){ .summary{padding:34px 36px} }
-.summary h2{font-family:"Noto Serif TC",serif; font-weight:600; font-size:1.3rem; margin:0 0 4px; color:var(--pine)}
-.summary .lead{margin:0 0 18px; font-size:.92rem; color:var(--ink-soft); font-family:"Noto Serif TC",serif}
+.summary h2{font-family:"Marcellus",serif; font-weight:400; font-size:1.42rem; margin:0 0 4px; color:var(--pine)}
+.summary .lead{margin:0 0 18px; font-size:.92rem; color:var(--ink-soft); font-family:"EB Garamond",serif; font-style:italic}
+.summary .lead span{font-family:"Noto Sans TC",serif; font-style:normal; display:block; font-size:.86rem; color:var(--sepia)}
 .picks{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px}
 .picks li{display:flex; gap:12px; align-items:flex-start}
 .picks .k{font-family:"Marcellus",serif; font-size:.64rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-faint); flex:0 0 62px; padding-top:5px}
-.picks .v{font-family:"Noto Serif TC",serif; font-size:1.02rem; line-height:1.5}
-.picks .v em{display:block; font-family:"EB Garamond",serif; font-size:.86rem; color:var(--ink-soft); font-style:italic; margin-top:1px}
+.picks .v{font-family:"EB Garamond",serif; font-size:1.08rem; line-height:1.45}
+.picks .v em{display:block; font-family:"Marcellus",serif; font-size:.78rem; letter-spacing:.06em; color:var(--claret); font-style:normal; margin-top:3px}
 .picks .empty{color:var(--ink-faint); font-style:italic}
 
 .share{margin-top:22px; padding-top:20px; border-top:1px solid rgba(20,92,51,.25)}
 .msg{
   width:100%; min-height:150px; resize:vertical;
-  font-family:"Noto Serif TC",ui-monospace,monospace; font-size:.88rem; line-height:1.6;
+  font-family:"Noto Sans TC",ui-monospace,monospace; font-size:.88rem; line-height:1.6;
   padding:12px 14px; color:var(--ink); background:var(--paper);
   border:1px solid rgba(122,90,46,.3);
 }
@@ -227,7 +249,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
   background:rgba(14,25,19,.94); backdrop-filter:blur(6px);
   border-top:1px solid rgba(62,135,87,.45);
   padding:11px 16px; display:flex; align-items:center; gap:12px;
-  color:var(--paper-warm); font-family:"Noto Serif TC",serif; font-size:.86rem;
+  color:var(--paper-warm); font-family:"Noto Sans TC",serif; font-size:.86rem;
 }
 .progress .dots{display:flex; gap:6px}
 .progress .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--pine-light);background:transparent}
@@ -286,6 +308,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
       </g>
     </svg>
     <h1>Happy Birthday<span class="name">Jessie</span></h1>
+    <p class="date">27 October</p>
     <p class="note zh">寶咁你生日 ❤️🐣🎂<br>兩條問題，揀完就搞掂。<br>禮物同去邊食飯，你話事。</p>
     <div class="dash" aria-hidden="true"></div>
   </header>
@@ -293,11 +316,10 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
   <!-- ================= GIFT ================= -->
   <section id="gift">
     <div class="sec-head">
-      <span class="numeral" aria-hidden="true">一</span>
-      <h2>禮物</h2>
-      <span class="en">Le cadeau</span>
+      <span class="numeral" aria-hidden="true">1</span>
+      <h2>The Gift</h2>
     </div>
-    <p class="sec-sub zh">兩個都有 AirPods Pro，分別在於另外嗰份。</p>
+    <p class="sec-sub">Both come with AirPods Pro — the other half is the choice.</p>
 
     <div class="options" role="group" aria-label="禮物選擇">
 
@@ -307,13 +329,14 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
           <span class="badge">A<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
           <div>
             <p class="sub">Cash + AirPods</p>
-            <h3>直接 sponsor 你 $4,000</h3>
+            <h3>$4,000, yours to spend</h3>
+            <p class="zh-title">直接 sponsor 你 $4,000</p>
           </div>
           <span class="price">$4,000</span>
         </div>
         <ul class="bullets">
-          <li>我先 sponsor 你 <strong>$4,000</strong>，隨你點用<span class="en">Straight cash, spend it however you like</span></li>
-          <li>再用我攞到嘅 gift card 買 <strong>AirPods Pro</strong> 比你頂住先<span class="en">Plus AirPods Pro, bought with the gift card</span></li>
+          <li>Straight cash — <strong>$4,000</strong>, spend it however you like<span class="tc">我先 sponsor 你 $4,000，隨你點用</span></li>
+          <li>Plus <strong>AirPods Pro</strong>, bought with the gift card<span class="tc">再用我攞到嘅 gift card 買，比你頂住先</span></li>
         </ul>
       </div>
 
@@ -323,13 +346,14 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
           <span class="badge">B<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
           <div>
             <p class="sub">Surprise + AirPods</p>
-            <h3>神秘禮物 🎁</h3>
+            <h3>A mystery gift 🎁</h3>
+            <p class="zh-title">神秘禮物，價值 $4,000</p>
           </div>
           <span class="price">價值 $4,000</span>
         </div>
         <ul class="bullets">
-          <li>一份 <strong>神秘禮物</strong>，價值 $4,000，拆咗先知<span class="en">A surprise, same value — you find out on the day</span></li>
-          <li>同樣有 <strong>AirPods Pro</strong>（gift card 買）頂住先<span class="en">AirPods Pro included either way</span></li>
+          <li>A <strong>surprise</strong>, same $4,000 value — you find out on the day<span class="tc">一份神秘禮物，拆咗先知</span></li>
+          <li><strong>AirPods Pro</strong> included either way<span class="tc">同樣有 AirPods Pro（gift card 買）頂住先</span></li>
         </ul>
       </div>
 
@@ -339,11 +363,10 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
   <!-- ================= LUNCH ================= -->
   <section id="lunch">
     <div class="sec-head">
-      <span class="numeral" aria-hidden="true">二</span>
-      <h2>生日午餐</h2>
-      <span class="en">Le déjeuner</span>
+      <span class="numeral" aria-hidden="true">2</span>
+      <h2>Birthday Lunch</h2>
     </div>
-    <p class="sec-sub zh">兩間都係法式路線，一間英倫田園，一間classic French。</p>
+    <p class="sec-sub">Two tasting menus — one British farmhouse, one classic French.</p>
 
     <div class="options" role="group" aria-label="午餐選擇">
 
@@ -354,7 +377,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
           <span class="badge">A<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
           <div>
             <p class="sub">Roganic · Short Menu</p>
-            <h3>英式田園 · 11 道菜</h3>
+            <h3>British farmhouse — 11 courses</h3>
           </div>
           <span class="price">$980</span>
         </div>
@@ -400,7 +423,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
           <span class="badge">B<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
           <div>
             <p class="sub">Épure · Chef's Dégustation</p>
-            <h3>法國菜 · 主廚品味午餐</h3>
+            <h3>Classic French — chef's tasting</h3>
           </div>
           <span class="price">$888</span>
         </div>
@@ -443,33 +466,33 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
 
   <!-- ================= SUMMARY ================= -->
   <section class="summary" id="summary">
-    <h2>你嘅選擇</h2>
-    <p class="lead">揀好之後撳「Copy」，send 返比我就得。</p>
+    <h2>Your Picks</h2>
+    <p class="lead">Choose above, then copy the message and send it to me.<span>揀好之後撳 Copy，send 返比我就得。</span></p>
     <ul class="picks">
-      <li><span class="k">Cadeau</span><span class="v" id="pick-gift"><span class="empty">未揀 — 上面撳一個</span></span></li>
-      <li><span class="k">Déjeuner</span><span class="v" id="pick-lunch"><span class="empty">未揀 — 上面撳一個</span></span></li>
+      <li><span class="k">Cadeau</span><span class="v" id="pick-gift"><span class="empty">Not picked yet</span></span></li>
+      <li><span class="k">Déjeuner</span><span class="v" id="pick-lunch"><span class="empty">Not picked yet</span></span></li>
     </ul>
 
     <div class="share">
-      <label for="msg" class="menu-label" style="display:block">給 Marco 的訊息</label>
+      <label for="msg" class="menu-label" style="display:block">Message to Marco</label>
       <textarea class="msg" id="msg" readonly aria-live="polite"></textarea>
       <div class="btnrow">
-        <button type="button" class="act" id="copy">Copy 訊息</button>
-        <button type="button" class="act ghost" id="reset">重新揀過</button>
-        <span class="said" id="said">Copy 咗 ✓</span>
+        <button type="button" class="act" id="copy">Copy message</button>
+        <button type="button" class="act ghost" id="reset">Start over</button>
+        <span class="said" id="said">Copied ✓</span>
       </div>
     </div>
   </section>
 
   <div class="signoff">
-    <p class="hand">揀邊個都好，總之生日快樂 🎂<br>— Marco</p>
+    <p class="hand">Whichever you pick — happy birthday 🎂<br>— Marco</p>
   </div>
 </div>
 
 <div class="progress" role="status">
   <span class="dots" aria-hidden="true"><span class="dot" id="d1"></span><span class="dot" id="d2"></span></span>
   <span id="prog" class="zh">仲有 2 個未揀</span>
-  <button type="button" class="go" id="go">睇總結</button>
+  <button type="button" class="go" id="go">Your picks</button>
 </div>
 
 <script>
@@ -520,8 +543,8 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
   }
 
   var TEXT = {
-    gift:  {A:['禮物 A','$4,000 現金 + AirPods Pro'], B:['禮物 B','神秘禮物（價值 $4,000）+ AirPods Pro']},
-    lunch: {A:['Roganic — Short Menu','$980 / 位 · 加配酒 $600'], B:['Épure — Chef’s Dégustation Lunch','$888 / 位 · 加配酒 $588']}
+    gift:  {A:['$4,000 cash + AirPods Pro','A · $4,000'], B:['Mystery gift + AirPods Pro','B · worth $4,000']},
+    lunch: {A:['Roganic — Short Menu','A · $980 pp · wine $600'], B:['Épure — Chef’s Dégustation','B · $888 pp · wine $588']}
   };
 
   function render(){
@@ -539,7 +562,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
         em.textContent = TEXT[g][k][1];
         el.appendChild(em);
       }else{
-        el.innerHTML = '<span class="empty">未揀 — 上面撳一個</span>';
+        el.innerHTML = '<span class="empty">Not picked yet</span>';
       }
     });
 
