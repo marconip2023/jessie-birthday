@@ -1,0 +1,597 @@
+<title>Jessie 生日餐牌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Caveat:wght@500;600&family=Noto+Serif+TC:wght@400;600&display=swap">
+
+<style>
+:root{
+  /* committed single-theme palette: an ink-drawn menu card on a dark table */
+  --table:      #16241C;
+  --table-deep: #0E1913;
+  --paper:      #FBF7EC;
+  --paper-warm: #F3ECDA;
+  --ink:        #2C2A22;
+  --ink-soft:   #6B6552;
+  --ink-faint:  #A79E85;
+  --pine:       #145C33;
+  --pine-light: #3E8757;
+  --sepia:      #7A5A2E;
+  --sepia-pale: #C7AC7E;
+  --claret:     #7B2233;
+  --gold:       #B08D3F;
+
+  --tickH: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='22'%3E%3Cg stroke='%23145C33' stroke-width='3.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M5 4.5 L4 17.5'/%3E%3Cpath d='M17 5 L17.6 17'/%3E%3Cpath d='M29 4 L28.2 17.6'/%3E%3C/g%3E%3C/svg%3E");
+  --tickV: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='36'%3E%3Cg stroke='%23145C33' stroke-width='3.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M4.5 5 L17.5 4'/%3E%3Cpath d='M5 17 L17 17.6'/%3E%3Cpath d='M4 29 L17.6 28.2'/%3E%3C/g%3E%3C/svg%3E");
+  --ruleH: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='6'%3E%3Cpath d='M0 3.4 Q30 1.7 60 3.2 T120 2.8' stroke='%23145C33' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  --ruleV: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='120'%3E%3Cpath d='M3.4 0 Q1.7 30 3.2 60 T2.8 120' stroke='%23145C33' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  --loop: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 72' width='72' height='72'%3E%3Cpath d='M72 20 C50 20 30 21 21 15 C12 9 17 2 23 6 C30 10.5 25 21 15 27 C6 32.5 3 44 3 72' stroke='%23145C33' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--table);
+  background-image:radial-gradient(120% 80% at 50% 0%, #1D3025 0%, var(--table) 45%, var(--table-deep) 100%);
+  color:var(--ink);
+  font-family:"EB Garamond","Noto Serif TC",Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding:10px 8px 96px;
+}
+@media (min-width:720px){ body{padding:34px 24px 120px; font-size:18px;} }
+
+.zh{ font-family:"Noto Serif TC","EB Garamond",serif; }
+.hand{ font-family:"Caveat","Noto Serif TC",cursive; }
+
+/* ---------- the card + its hand-drawn frame ---------- */
+.card{
+  position:relative;
+  max-width:760px;
+  margin:0 auto;
+  background:var(--paper);
+  background-image:var(--grain);
+  box-shadow:0 24px 60px -18px rgba(0,0,0,.62), 0 2px 0 rgba(255,255,255,.05);
+  padding:56px 22px 48px;
+}
+@media (min-width:720px){ .card{padding:78px 66px 64px;} }
+
+.frame{position:absolute; inset:0; pointer-events:none;}
+.frame span{position:absolute; display:block;}
+.frame .t,.frame .b{left:0; right:0; height:22px; background-image:var(--tickH); background-repeat:repeat-x; background-size:36px 22px;}
+.frame .t{top:6px} .frame .b{bottom:6px}
+.frame .l,.frame .r{top:0; bottom:0; width:22px; background-image:var(--tickV); background-repeat:repeat-y; background-size:22px 36px;}
+.frame .l{left:6px} .frame .r{right:6px}
+
+.frame .rt,.frame .rb{left:38px; right:38px; height:6px; background-image:var(--ruleH); background-repeat:repeat-x; background-size:120px 6px;}
+.frame .rt{top:31px} .frame .rb{bottom:31px}
+.frame .rl,.frame .rr{top:38px; bottom:38px; width:6px; background-image:var(--ruleV); background-repeat:repeat-y; background-size:6px 120px;}
+.frame .rl{left:31px} .frame .rr{right:31px}
+
+.frame .c{width:42px; height:42px; background-image:var(--loop); background-size:100% 100%; background-repeat:no-repeat;}
+.frame .c1{top:29px; left:29px}
+.frame .c2{top:29px; right:29px; transform:scaleX(-1)}
+.frame .c3{bottom:29px; left:29px; transform:scaleY(-1)}
+.frame .c4{bottom:29px; right:29px; transform:scale(-1)}
+
+@media (min-width:720px){
+  .frame .rt{top:33px} .frame .rb{bottom:33px}
+  .frame .rl{left:33px} .frame .rr{right:33px}
+  .frame .c{width:52px;height:52px}
+  .frame .c1{top:31px;left:31px} .frame .c2{top:31px;right:31px}
+  .frame .c3{bottom:31px;left:31px} .frame .c4{bottom:31px;right:31px}
+}
+
+/* ---------- cover ---------- */
+.cover{text-align:center}
+.eyebrow{
+  font-family:"Marcellus",serif;
+  font-size:.7rem; letter-spacing:.42em; text-transform:uppercase;
+  color:var(--pine); margin:0 0 6px; padding-left:.42em;
+}
+.dog{display:block; width:min(320px,78%); height:auto; margin:2px auto 4px;}
+h1{
+  font-family:"Marcellus",serif;
+  font-weight:400; font-size:clamp(2rem,9vw,3.15rem); line-height:1.05;
+  margin:6px 0 2px; color:var(--claret); text-wrap:balance;
+}
+.name{ display:block; font-family:"Caveat",cursive; font-size:clamp(2.6rem,13vw,4.4rem); line-height:.95; color:var(--claret); margin-top:2px;}
+.cover .note{
+  font-family:"Caveat","Noto Serif TC",cursive;
+  word-break:keep-all;
+  font-size:clamp(1.25rem,5.2vw,1.6rem); color:var(--sepia);
+  margin:14px auto 0; max-width:34ch; line-height:1.45;
+}
+.dash{width:64px;height:6px;margin:22px auto 0;background-image:var(--ruleH);background-size:120px 6px;background-repeat:repeat-x;opacity:.75}
+
+/* ---------- sections ---------- */
+section{margin-top:46px}
+.sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:4px}
+.numeral{
+  font-family:"Noto Serif TC",serif; font-size:1rem; color:var(--paper);
+  background:var(--pine); width:28px; height:28px; flex:0 0 28px;
+  display:flex; align-items:center; justify-content:center; border-radius:50%;
+  transform:rotate(-3deg);
+}
+.sec-head h2{
+  font-family:"Noto Serif TC",serif; font-weight:600;
+  font-size:clamp(1.35rem,5.4vw,1.75rem); margin:0; color:var(--pine); letter-spacing:.04em;
+}
+.sec-head .en{
+  font-family:"Marcellus",serif; font-size:.68rem; letter-spacing:.28em;
+  text-transform:uppercase; color:var(--ink-faint); margin-left:auto; white-space:nowrap;
+}
+.sec-sub{margin:2px 0 20px 40px; color:var(--ink-soft); font-size:.95rem}
+
+.options{display:flex; flex-direction:column; gap:18px}
+
+/* ---------- option card ---------- */
+.opt{
+  position:relative; display:block; width:100%; text-align:left;
+  background:transparent; border:1.5px solid rgba(122,90,46,.34);
+  padding:20px 18px 20px; cursor:pointer; font:inherit; color:inherit;
+  transition:border-color .18s ease, background-color .18s ease, transform .18s ease;
+}
+@media (min-width:720px){ .opt{padding:26px 28px} }
+.opt:hover{border-color:rgba(20,92,51,.55); background:rgba(240,232,212,.5)}
+.opt:focus-visible{outline:3px solid var(--pine); outline-offset:3px}
+.opt[aria-pressed="true"]{border-color:var(--pine); border-width:1.5px; background:rgba(226,235,222,.62)}
+
+.opt-top{display:flex; align-items:flex-start; gap:14px}
+.badge{
+  position:relative; flex:0 0 auto; width:42px; height:42px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:"Marcellus",serif; font-size:1.32rem; color:var(--sepia);
+}
+.badge .ring{position:absolute; inset:-6px; opacity:0; transition:opacity .2s ease}
+.opt[aria-pressed="true"] .badge{color:var(--pine)}
+.opt[aria-pressed="true"] .badge .ring{opacity:1}
+
+.opt h3{
+  font-family:"Noto Serif TC",serif; font-weight:600;
+  font-size:1.12rem; margin:6px 0 2px; line-height:1.4; color:var(--ink);
+}
+.opt .sub{font-family:"Marcellus",serif; font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-faint); margin:0}
+.opt .price{
+  font-family:"Marcellus",serif; font-size:1.02rem; color:var(--claret);
+  margin-left:auto; padding-top:8px; white-space:nowrap; font-variant-numeric:tabular-nums;
+}
+
+.bullets{list-style:none; margin:14px 0 0; padding:0 0 0 56px; display:flex; flex-direction:column; gap:9px}
+.bullets li{position:relative; font-family:"Noto Serif TC",serif; font-size:1rem; line-height:1.55}
+.bullets li::before{content:"✦"; position:absolute; left:-20px; top:0; color:var(--sepia-pale); font-size:.8rem}
+.bullets .en{display:block; font-family:"EB Garamond",serif; font-style:italic; font-size:.9rem; color:var(--ink-soft); margin-top:1px}
+
+/* ---------- menu (courses) ---------- */
+.menu{margin:18px 0 0; padding:18px 0 0; border-top:1px solid rgba(122,90,46,.22)}
+.menu-label{font-family:"Marcellus",serif; font-size:.66rem; letter-spacing:.28em; text-transform:uppercase; color:var(--pine); margin:0 0 14px}
+.courses{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:13px}
+.courses li{padding-left:16px; border-left:1px solid rgba(122,90,46,.24)}
+.courses .fr{font-family:"EB Garamond",serif; font-size:.99rem; line-height:1.38; color:var(--ink)}
+.courses .tc{display:block; font-family:"Noto Serif TC",serif; font-size:.92rem; color:var(--sepia); margin-top:2px; line-height:1.5}
+.courses .supp{display:inline-block; font-family:"Marcellus",serif; font-size:.62rem; letter-spacing:.12em; text-transform:uppercase; color:var(--claret); border:1px solid rgba(123,34,51,.35); padding:1px 6px; margin-top:5px}
+.courses li.or{border-left:none; padding-left:0; font-family:"Marcellus",serif; font-size:.7rem; letter-spacing:.3em; text-transform:uppercase; color:var(--ink-faint); margin:-4px 0 -4px 16px}
+
+.extras{margin:16px 0 0; padding:13px 15px; background:rgba(240,232,212,.62); border:1px solid rgba(122,90,46,.2)}
+.extras p{margin:0 0 8px; font-family:"Noto Serif TC",serif; font-size:.86rem; color:var(--pine)}
+.extras dl{margin:0; display:grid; grid-template-columns:1fr auto; gap:5px 14px; font-size:.9rem}
+.extras dt{font-family:"EB Garamond",serif}
+.extras dt span{display:block; font-family:"Noto Serif TC",serif; font-size:.8rem; color:var(--ink-soft)}
+.extras dd{margin:0; font-family:"Marcellus",serif; color:var(--claret); text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+.fineprint{margin:12px 0 0; font-size:.8rem; color:var(--ink-faint); font-family:"Noto Serif TC",serif; line-height:1.5}
+.venue{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 0; font-size:.78rem; color:var(--ink-soft)}
+.venue a{color:var(--pine); text-decoration-color:rgba(20,92,51,.4); text-underline-offset:3px}
+.venue .tag{font-family:"Marcellus",serif; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(176,141,63,.5); padding:2px 7px}
+
+/* ---------- summary ---------- */
+.summary{margin-top:52px; padding:26px 20px; border:1.5px solid var(--pine); position:relative; background:rgba(226,235,222,.42)}
+@media (min-width:720px){ .summary{padding:34px 36px} }
+.summary h2{font-family:"Noto Serif TC",serif; font-weight:600; font-size:1.3rem; margin:0 0 4px; color:var(--pine)}
+.summary .lead{margin:0 0 18px; font-size:.92rem; color:var(--ink-soft); font-family:"Noto Serif TC",serif}
+.picks{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:14px}
+.picks li{display:flex; gap:12px; align-items:flex-start}
+.picks .k{font-family:"Marcellus",serif; font-size:.64rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-faint); flex:0 0 62px; padding-top:5px}
+.picks .v{font-family:"Noto Serif TC",serif; font-size:1.02rem; line-height:1.5}
+.picks .v em{display:block; font-family:"EB Garamond",serif; font-size:.86rem; color:var(--ink-soft); font-style:italic; margin-top:1px}
+.picks .empty{color:var(--ink-faint); font-style:italic}
+
+.share{margin-top:22px; padding-top:20px; border-top:1px solid rgba(20,92,51,.25)}
+.msg{
+  width:100%; min-height:150px; resize:vertical;
+  font-family:"Noto Serif TC",ui-monospace,monospace; font-size:.88rem; line-height:1.6;
+  padding:12px 14px; color:var(--ink); background:var(--paper);
+  border:1px solid rgba(122,90,46,.3);
+}
+.msg:focus-visible{outline:2px solid var(--pine); outline-offset:2px}
+.btnrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:12px}
+button.act{
+  font-family:"Marcellus",serif; font-size:.74rem; letter-spacing:.2em; text-transform:uppercase;
+  padding:11px 20px; cursor:pointer; border:1.5px solid var(--pine);
+  background:var(--pine); color:var(--paper); transition:opacity .15s ease;
+}
+button.act.ghost{background:transparent; color:var(--pine)}
+button.act:hover{opacity:.82}
+button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
+.said{font-family:"Caveat",cursive; font-size:1.15rem; color:var(--pine); opacity:0; transition:opacity .2s ease}
+.said.on{opacity:1}
+
+.signoff{text-align:center; margin-top:40px}
+.signoff .hand{font-size:clamp(1.35rem,5.6vw,1.75rem); color:var(--sepia); line-height:1.5}
+
+/* sticky progress */
+.progress{
+  position:fixed; left:0; right:0; bottom:0; z-index:20;
+  background:rgba(14,25,19,.94); backdrop-filter:blur(6px);
+  border-top:1px solid rgba(62,135,87,.45);
+  padding:11px 16px; display:flex; align-items:center; gap:12px;
+  color:var(--paper-warm); font-family:"Noto Serif TC",serif; font-size:.86rem;
+}
+.progress .dots{display:flex; gap:6px}
+.progress .dot{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--pine-light);background:transparent}
+.progress .dot.on{background:var(--pine-light)}
+.progress .go{
+  margin-left:auto; font-family:"Marcellus",serif; font-size:.68rem; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--table-deep); background:var(--paper-warm);
+  border:none; padding:9px 15px; cursor:pointer;
+}
+.progress .go:focus-visible{outline:2px solid var(--paper); outline-offset:2px}
+
+@media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important} }
+</style>
+
+<div class="card">
+  <div class="frame" aria-hidden="true">
+    <span class="t"></span><span class="b"></span><span class="l"></span><span class="r"></span>
+    <span class="rt"></span><span class="rb"></span><span class="rl"></span><span class="rr"></span>
+    <span class="c c1"></span><span class="c c2"></span><span class="c c3"></span><span class="c c4"></span>
+  </div>
+
+  <header class="cover">
+    <p class="eyebrow">Pour toi</p>
+    <svg class="dog" viewBox="0 0 640 470" role="img" aria-label="一隻臘腸狗，頭部圍住一個花邊心形">
+      <g fill="none" stroke="#7A5A2E" stroke-linecap="round" stroke-linejoin="round">
+        <!-- scalloped heart frame (generated) -->
+        <path id="heartRuffle" stroke-width="3.2" d=""/>
+        <path id="heartInner"  stroke-width="2.1" d=""/>
+        <!-- body -->
+        <path stroke-width="3.4" d="M262 176 C318 150 392 141 452 147 C486 150 506 158 516 170"/>
+        <path stroke-width="3.4" d="M516 170 C528 146 540 118 552 96 C556 88 552 82 546 88 C534 100 522 128 514 152"/>
+        <path stroke-width="3.4" d="M520 176 C532 216 528 262 512 296 C504 314 490 324 474 326"/>
+        <path stroke-width="3.4" d="M474 326 C470 352 470 380 472 400"/>
+        <path stroke-width="3.4" d="M472 400 C462 406 456 412 458 418 C462 424 486 424 490 418 C492 412 488 404 484 400 C482 386 484 358 490 334"/>
+        <path stroke-width="3.4" d="M428 330 C424 356 424 384 426 402 C416 408 412 414 415 420 C420 426 442 426 446 419 C448 412 444 405 440 401 C440 382 442 356 446 332"/>
+        <path stroke-width="3.4" d="M270 300 C296 322 340 332 396 332 C412 332 424 331 434 330"/>
+        <path stroke-width="3.4" d="M258 306 C254 342 254 380 256 402 C246 408 241 415 244 421 C249 427 271 427 275 420 C277 413 273 406 269 402 C270 380 272 344 276 316"/>
+        <path stroke-width="3.4" d="M206 316 C202 348 202 382 204 402 C194 408 189 415 192 421 C197 427 219 427 223 420 C225 413 221 406 217 402 C217 382 219 350 222 322"/>
+        <!-- head -->
+        <g transform="translate(-19.5,-27.5) scale(1.1)">
+        <path stroke-width="3.1" d="M150 152 C142 138 152 126 168 126 C186 126 202 134 214 146"/>
+        <path stroke-width="3.1" d="M240 150 C252 138 268 132 278 140 C288 148 284 164 274 174"/>
+        <path stroke-width="3.1" d="M152 154 C130 178 118 214 122 244 C126 268 142 278 158 268 C172 259 178 232 176 206"/>
+        <path stroke-width="3.1" d="M272 172 C288 194 294 226 286 250 C280 268 264 274 252 262 C242 252 240 230 244 210"/>
+        <path stroke-width="3.1" d="M176 150 C168 176 168 208 176 232 C184 254 198 264 210 262 C224 260 236 244 242 222 C248 200 248 172 242 152"/>
+        <path stroke-width="3.1" d="M186 236 C192 250 198 258 206 260"/>
+        <ellipse cx="192" cy="190" rx="7.5" ry="9" stroke-width="2.8" fill="#7A5A2E"/>
+        <ellipse cx="228" cy="188" rx="7.5" ry="9" stroke-width="2.8" fill="#7A5A2E"/>
+        <path stroke-width="2.4" d="M182 176 C186 170 194 169 199 173"/>
+        <path stroke-width="2.4" d="M221 174 C226 169 234 170 237 176"/>
+        <path stroke-width="3" d="M200 232 C204 226 214 225 219 230 C223 235 219 241 211 242 C204 243 198 238 200 232 Z" fill="#7A5A2E"/>
+        <path stroke-width="2.4" d="M209 243 L209 250"/>
+        <path stroke-width="2.4" d="M209 250 C204 256 197 256 194 252"/>
+        <path stroke-width="2.4" d="M209 250 C214 256 221 256 224 252"/>
+        </g>
+      </g>
+    </svg>
+    <h1>Happy Birthday<span class="name">Jessie</span></h1>
+    <p class="note zh">寶咁你生日 ❤️🐣🎂<br>兩條問題，揀完就搞掂。<br>禮物同去邊食飯，你話事。</p>
+    <div class="dash" aria-hidden="true"></div>
+  </header>
+
+  <!-- ================= GIFT ================= -->
+  <section id="gift">
+    <div class="sec-head">
+      <span class="numeral" aria-hidden="true">一</span>
+      <h2>禮物</h2>
+      <span class="en">Le cadeau</span>
+    </div>
+    <p class="sec-sub zh">兩個都有 AirPods Pro，分別在於另外嗰份。</p>
+
+    <div class="options" role="group" aria-label="禮物選擇">
+
+      <div class="opt" role="button" tabindex="0" data-group="gift" data-key="A"
+              data-label="禮物 A — $4,000 現金 + AirPods Pro" aria-pressed="false">
+        <div class="opt-top">
+          <span class="badge">A<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div>
+            <p class="sub">Cash + AirPods</p>
+            <h3>直接 sponsor 你 $4,000</h3>
+          </div>
+          <span class="price">$4,000</span>
+        </div>
+        <ul class="bullets">
+          <li>我先 sponsor 你 <strong>$4,000</strong>，隨你點用<span class="en">Straight cash, spend it however you like</span></li>
+          <li>再用我攞到嘅 gift card 買 <strong>AirPods Pro</strong> 比你頂住先<span class="en">Plus AirPods Pro, bought with the gift card</span></li>
+        </ul>
+      </div>
+
+      <div class="opt" role="button" tabindex="0" data-group="gift" data-key="B"
+              data-label="禮物 B — 神秘禮物（價值 $4,000）+ AirPods Pro" aria-pressed="false">
+        <div class="opt-top">
+          <span class="badge">B<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div>
+            <p class="sub">Surprise + AirPods</p>
+            <h3>神秘禮物 🎁</h3>
+          </div>
+          <span class="price">價值 $4,000</span>
+        </div>
+        <ul class="bullets">
+          <li>一份 <strong>神秘禮物</strong>，價值 $4,000，拆咗先知<span class="en">A surprise, same value — you find out on the day</span></li>
+          <li>同樣有 <strong>AirPods Pro</strong>（gift card 買）頂住先<span class="en">AirPods Pro included either way</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LUNCH ================= -->
+  <section id="lunch">
+    <div class="sec-head">
+      <span class="numeral" aria-hidden="true">二</span>
+      <h2>生日午餐</h2>
+      <span class="en">Le déjeuner</span>
+    </div>
+    <p class="sec-sub zh">兩間都係法式路線，一間英倫田園，一間classic French。</p>
+
+    <div class="options" role="group" aria-label="午餐選擇">
+
+      <!-- ---- Roganic ---- -->
+      <div class="opt" role="button" tabindex="0" data-group="lunch" data-key="A"
+              data-label="午餐 A — Roganic：Short Menu $980 + 配酒 $600" aria-pressed="false">
+        <div class="opt-top">
+          <span class="badge">A<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div>
+            <p class="sub">Roganic · Short Menu</p>
+            <h3>英式田園 · 11 道菜</h3>
+          </div>
+          <span class="price">$980</span>
+        </div>
+
+        <div class="venue">
+          <span class="tag">Michelin</span>
+          <span class="zh">Simon Rogan · 銅鑼灣</span>
+          <a href="https://www.roganic.com.hk/menus" target="_blank" rel="noopener">睇餐廳原文餐牌 ↗</a>
+        </div>
+
+        <div class="menu">
+          <p class="menu-label">Short Menu — 11 courses</p>
+          <ol class="courses">
+            <li><span class="fr">Raw and smoked Hokkaido scallop with horseradish, farm legumes, young shoots and flowers</span><span class="tc">生醃及煙燻北海道帶子，配辣根、農場豆類、嫩芽與食用花</span></li>
+            <li><span class="fr">Warm broth of jicama and mussels finished with buttermilk whey and lovage oil</span><span class="tc">沙葛青口暖湯，以酪乳乳清及圓葉當歸油提香</span></li>
+            <li><span class="fr">Mr Lin's asparagus with summer herbs and roasted pork, slow-cooked hen's yolk, and toasted yeast</span><span class="tc">林先生蘆筍配夏日香草與燒豬肉、慢煮蛋黃及烘焙酵母</span></li>
+            <li><span class="fr">Our miso Parker house</span><span class="tc">自家製味噌 Parker House 麵包</span></li>
+            <li><span class="fr">Our laminated brioche, fermented truffle, and cultured butter</span><span class="tc">自家製千層布里歐，配發酵松露及發酵牛油</span></li>
+            <li><span class="fr">Salt baked Ibis celeriac and Petrossian Royal caviar with sugar kelp</span><span class="tc">鹽焗根芹配 Petrossian 皇家魚子醬及糖海帶</span><span class="supp">另加 $288 / 位</span></li>
+            <li><span class="fr">Dry aged sea bass from southern waters, stuffed with ebi shrimp and fennel pollen</span><span class="tc">乾式熟成南海海鱸，釀入甜蝦與茴香花粉</span></li>
+            <li><span class="fr">Roast Guangdong duck with Tokyo turnips, split peas and bone sauce infused with fig leaf</span><span class="tc">燒廣東鴨配東京蕪菁、乾豌豆及無花果葉骨汁</span></li>
+            <li><span class="fr">'Roganic' buttermilk custard infused with lemon verbena, perfume lemon curd and pink guava juices</span><span class="tc">Roganic 檸檬馬鞭草酪乳燉蛋，配香水檸檬醬及粉紅番石榴汁</span></li>
+            <li><span class="fr">Roast milk banana set cream with 72% cocoa, smoked Taiwanese vanilla and preserved marigold</span><span class="tc">烤奶蕉奶凍配 72% 可可、煙燻台灣雲呢拿及漬萬壽菊</span></li>
+            <li><span class="fr">Red date and goji 'malt loaf' with spiced prickly ash butter</span><span class="tc">紅棗杞子「麥芽麵包」配花椒香料牛油</span></li>
+          </ol>
+
+          <div class="extras">
+            <p>可以加：</p>
+            <dl>
+              <dt>Wine pairing<span>配酒</span></dt><dd>$600</dd>
+              <dt>Caviar supplement<span>魚子醬加配（第 6 道）</span></dt><dd>$288</dd>
+            </dl>
+          </div>
+
+          <p class="fineprint">逢星期五、六晚上不供應（午餐不受影響）· 素食可預訂時安排 · 另加一服務費 · 菜式按時令供應而調整。</p>
+        </div>
+      </div>
+
+      <!-- ---- Épure ---- -->
+      <div class="opt" role="button" tabindex="0" data-group="lunch" data-key="B"
+              data-label="午餐 B — Épure：Chef's Dégustation Lunch $888 + 配酒 $588" aria-pressed="false">
+        <div class="opt-top">
+          <span class="badge">B<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div>
+            <p class="sub">Épure · Chef's Dégustation</p>
+            <h3>法國菜 · 主廚品味午餐</h3>
+          </div>
+          <span class="price">$888</span>
+        </div>
+
+        <div class="venue">
+          <span class="tag">Michelin 2026</span>
+          <span class="zh">French · 尖沙咀</span>
+        </div>
+
+        <div class="menu">
+          <p class="menu-label">Chef's Dégustation Lunch</p>
+          <ol class="courses">
+            <li><span class="fr">Amuse bouche</span><span class="tc">開胃菜</span></li>
+            <li><span class="fr">Hamachi crudo with jalapeño and shiso</span><span class="tc">時令油甘魚，配墨西哥辣椒與紫蘇</span></li>
+            <li><span class="fr">Yunnan morel mushrooms stuffed with prawns and kohlrabi</span><span class="tc">雲南羊肚菌釀蝦肉及大頭菜</span></li>
+            <li><span class="fr">Cuisse de grenouille à la « Singapore »</span><span class="tc">新加坡風味田雞腿</span></li>
+            <li><span class="fr">Poulet jaune farci with sauce suprême</span><span class="tc">法國黃油雞配雞油菌汁</span></li>
+            <li class="or">ou / 或</li>
+            <li><span class="fr">A4 Wagyu beef tenderloin au poivre « indochine »</span><span class="tc">日本穀飼 A4 和牛柳配胡椒汁</span><span class="supp">另加 $328</span></li>
+            <li><span class="fr">Soufflé — ask your server for the flavour of the day</span><span class="tc">梳乎厘 — 請向服務員查詢是日口味</span></li>
+            <li><span class="fr">Petits fours</span><span class="tc">法式美點</span></li>
+            <li><span class="fr">Coffee or tea</span><span class="tc">咖啡或茶</span></li>
+          </ol>
+
+          <div class="extras">
+            <p>餐廳推薦加配，全面提升味覺享受：</p>
+            <dl>
+              <dt>Wine pairing<span>配酒 · 3 杯</span></dt><dd>$588</dd>
+              <dt>Kaviari Oscietra Caviar<span>法國 Kaviari 白鱘魚子醬</span></dt><dd>$40 / 克</dd>
+              <dt>Wagyu supplement<span>轉 A4 和牛柳</span></dt><dd>$328</dd>
+            </dl>
+          </div>
+
+          <p class="fineprint">另加一服務費 · 如有食物敏感或飲食需要，請於訂座時告知。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SUMMARY ================= -->
+  <section class="summary" id="summary">
+    <h2>你嘅選擇</h2>
+    <p class="lead">揀好之後撳「Copy」，send 返比我就得。</p>
+    <ul class="picks">
+      <li><span class="k">Cadeau</span><span class="v" id="pick-gift"><span class="empty">未揀 — 上面撳一個</span></span></li>
+      <li><span class="k">Déjeuner</span><span class="v" id="pick-lunch"><span class="empty">未揀 — 上面撳一個</span></span></li>
+    </ul>
+
+    <div class="share">
+      <label for="msg" class="menu-label" style="display:block">給 Marco 的訊息</label>
+      <textarea class="msg" id="msg" readonly aria-live="polite"></textarea>
+      <div class="btnrow">
+        <button type="button" class="act" id="copy">Copy 訊息</button>
+        <button type="button" class="act ghost" id="reset">重新揀過</button>
+        <span class="said" id="said">Copy 咗 ✓</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="signoff">
+    <p class="hand">揀邊個都好，總之生日快樂 🎂<br>— Marco</p>
+  </div>
+</div>
+
+<div class="progress" role="status">
+  <span class="dots" aria-hidden="true"><span class="dot" id="d1"></span><span class="dot" id="d2"></span></span>
+  <span id="prog" class="zh">仲有 2 個未揀</span>
+  <button type="button" class="go" id="go">睇總結</button>
+</div>
+
+<script>
+/* ---------- generated scalloped heart ---------- */
+(function heart(){
+  var cx = 199, cy = 202, N = 560;
+  function build(scale, ruffAmp, ruffFreq){
+    var pts = [], i, t, x, y, dx, dy, len, nx, ny, off;
+    for(i=0;i<=N;i++){
+      t = i/N * Math.PI*2;
+      x = 16*Math.pow(Math.sin(t),3);
+      y = 13*Math.cos(t) - 5*Math.cos(2*t) - 2*Math.cos(3*t) - Math.cos(4*t);
+      dx = 48*Math.pow(Math.sin(t),2)*Math.cos(t);
+      dy = -13*Math.sin(t) + 10*Math.sin(2*t) + 6*Math.sin(3*t) + 4*Math.sin(4*t);
+      len = Math.hypot(dx,dy) || 1;
+      nx = dy/len; ny = -dx/len;
+      off = ruffAmp ? ruffAmp*Math.sin(ruffFreq*t) : 0;
+      pts.push([
+        (cx + scale*x + off*nx).toFixed(1),
+        (cy - scale*(y+3) + off*ny).toFixed(1)
+      ]);
+    }
+    return "M" + pts.map(function(p){return p[0]+" "+p[1];}).join(" L") + " Z";
+  }
+  var r = document.getElementById('heartRuffle');
+  var n = document.getElementById('heartInner');
+  if(r) r.setAttribute('d', build(9.7, 5.6, 23));
+  if(n) n.setAttribute('d', build(8.8, 0, 0));
+})();
+
+/* ---------- selection ---------- */
+(function(){
+  var KEY = 'jessie-bday-picks-v1';
+  var state = {gift:null, lunch:null};
+
+  try{
+    var raw = localStorage.getItem(KEY);
+    if(raw){ var p = JSON.parse(raw); if(p && typeof p === 'object'){ state.gift = p.gift || null; state.lunch = p.lunch || null; } }
+  }catch(e){}
+
+  var opts = Array.prototype.slice.call(document.querySelectorAll('.opt'));
+
+  function labelFor(group, key){
+    for(var i=0;i<opts.length;i++){
+      if(opts[i].dataset.group === group && opts[i].dataset.key === key) return opts[i].dataset.label;
+    }
+    return null;
+  }
+
+  var TEXT = {
+    gift:  {A:['禮物 A','$4,000 現金 + AirPods Pro'], B:['禮物 B','神秘禮物（價值 $4,000）+ AirPods Pro']},
+    lunch: {A:['Roganic — Short Menu','$980 / 位 · 加配酒 $600'], B:['Épure — Chef’s Dégustation Lunch','$888 / 位 · 加配酒 $588']}
+  };
+
+  function render(){
+    opts.forEach(function(b){
+      b.setAttribute('aria-pressed', state[b.dataset.group] === b.dataset.key ? 'true' : 'false');
+    });
+
+    ['gift','lunch'].forEach(function(g){
+      var el = document.getElementById('pick-' + g);
+      var k = state[g];
+      if(k && TEXT[g][k]){
+        el.innerHTML = '';
+        el.appendChild(document.createTextNode(TEXT[g][k][0]));
+        var em = document.createElement('em');
+        em.textContent = TEXT[g][k][1];
+        el.appendChild(em);
+      }else{
+        el.innerHTML = '<span class="empty">未揀 — 上面撳一個</span>';
+      }
+    });
+
+    var done = (state.gift?1:0) + (state.lunch?1:0);
+    document.getElementById('d1').classList.toggle('on', !!state.gift);
+    document.getElementById('d2').classList.toggle('on', !!state.lunch);
+    document.getElementById('prog').textContent =
+      done === 2 ? '兩個都揀好喇 ✓' : (done === 1 ? '仲有 1 個未揀' : '仲有 2 個未揀');
+
+    var lines = ['Marco，我揀好喇 🎂'];
+    lines.push('禮物：' + (state.gift ? labelFor('gift', state.gift).replace('禮物 ' + state.gift + ' — ', '') + '（' + state.gift + '）' : '未揀'));
+    lines.push('午餐：' + (state.lunch ? labelFor('lunch', state.lunch).replace('午餐 ' + state.lunch + ' — ', '') + '（' + state.lunch + '）' : '未揀'));
+    lines.push('— Jessie');
+    document.getElementById('msg').value = lines.join('\n');
+
+    try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+  }
+
+  function toggle(b){
+    var g = b.dataset.group;
+    state[g] = (state[g] === b.dataset.key) ? null : b.dataset.key;
+    render();
+  }
+  opts.forEach(function(b){
+    b.addEventListener('click', function(ev){
+      if(ev.target.closest('a')) return;   // let the restaurant link through
+      toggle(b);
+    });
+    b.addEventListener('keydown', function(ev){
+      if(ev.key === ' ' || ev.key === 'Enter'){ ev.preventDefault(); toggle(b); }
+    });
+  });
+
+  document.getElementById('reset').addEventListener('click', function(){
+    state.gift = null; state.lunch = null; render();
+    document.getElementById('gift').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  document.getElementById('go').addEventListener('click', function(){
+    document.getElementById('summary').scrollIntoView({behavior:'smooth', block:'start'});
+  });
+
+  var said = document.getElementById('said');
+  document.getElementById('copy').addEventListener('click', function(){
+    var ta = document.getElementById('msg');
+    function ok(){ said.classList.add('on'); setTimeout(function(){ said.classList.remove('on'); }, 2000); }
+    function manual(){ ta.focus(); ta.select(); said.textContent = '長按上面個框 → 複製'; said.classList.add('on'); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(ok, manual);
+    }else{ manual(); }
+  });
+
+  render();
+})();
+</script>
