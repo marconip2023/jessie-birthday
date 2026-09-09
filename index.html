@@ -49,7 +49,7 @@ body{
 /* ---------- the card + its hand-drawn frame ---------- */
 .card{
   position:relative;
-  max-width:760px;
+  width:100%;
   margin:0 auto;
   background:var(--paper);
   background-image:var(--grain);
@@ -57,6 +57,7 @@ body{
   padding:56px 38px 50px;
 }
 @media (min-width:720px){ .card{padding:88px 88px 76px;} }
+@media (min-width:1200px){ .card{padding:96px 104px 84px;} }
 
 .frame{position:absolute; inset:0; pointer-events:none;}
 .frame span{position:absolute; display:block;}
@@ -118,6 +119,7 @@ h1{
 
 /* ---------- sections ---------- */
 section{margin-top:46px}
+@media (min-width:900px){ section{margin-top:58px} }
 .sec-head{display:flex; align-items:baseline; gap:14px; margin-bottom:4px}
 .numeral{
   font-family:"Marcellus",serif; font-size:.98rem; color:var(--paper);
@@ -136,6 +138,14 @@ section{margin-top:46px}
 .sec-sub{margin:4px 0 20px 40px; color:var(--ink-soft); font-size:.95rem; font-family:"EB Garamond",serif; font-style:italic}
 
 .options{display:flex; flex-direction:column; gap:18px}
+@media (min-width:900px){
+  .options{display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:start}
+}
+/* keep a readable measure however wide the card gets */
+.cover h1,.cover .name{max-width:22ch; margin-inline:auto}
+.sec-sub{max-width:70ch}
+.courses .fr,.courses .tc,.bullets li{max-width:62ch}
+.summary .picks,.summary .lead,.summary .share{max-width:66ch}
 
 /* ---------- option card ---------- */
 .opt{
