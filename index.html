@@ -202,6 +202,7 @@ section{margin-top:64px}
 .venue{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:10px; margin:16px 0 0; font-size:.78rem; color:var(--ink-soft)}
 .venue a{color:var(--pine); text-decoration-color:rgba(20,92,51,.4); text-underline-offset:3px}
 .venue .tag{font-family:"Marcellus",serif; font-size:.6rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); border:1px solid rgba(176,141,63,.5); padding:2px 7px}
+.extras dl{grid-auto-rows:min-content}
 
 /* ---------- summary ---------- */
 .summary{margin-top:80px; padding:34px 24px; border:1.5px solid var(--pine); position:relative; background:rgba(226,235,222,.42)}
@@ -362,7 +363,7 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
       <span class="numeral" aria-hidden="true">2</span>
       <h2>Birthday Lunch</h2>
     </div>
-    <p class="sec-sub">Two tasting menus — one British farmhouse, one classic French.</p>
+    <p class="sec-sub">Three tasting menus — British farmhouse, classic French, or a trip to Bangkok.</p>
 
     <div class="options" role="group" aria-label="午餐選擇">
 
@@ -457,6 +458,50 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
         </div>
       </div>
 
+      <!-- ---- KHAAN ---- -->
+      <div class="opt" role="button" tabindex="0" data-group="lunch" data-key="C"
+              data-label="午餐 C — KHAAN 曼谷：11-Course Tasting ฿3,850++ + 4 杯配酒 ฿1,950++" aria-pressed="false">
+        <div class="opt-top">
+          <span class="badge">C<svg class="ring" viewBox="0 0 60 60" aria-hidden="true"><path d="M32 6 C14 5 4 17 5 30 C6 44 18 55 32 54 C46 53 56 41 55 28 C54 15 44 5 29 6" fill="none" stroke="#145C33" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div>
+            <p class="sub">KHAAN · Bangkok</p>
+            <h3>Modern Thai — 11 courses</h3>
+          </div>
+          <span class="price">฿3,850++</span>
+        </div>
+
+        <div class="venue">
+          <span class="tag">Bangkok</span>
+          <span class="zh">Chef Aom Sujira Pongmorn · Chit Lom</span>
+          <a href="https://www.khaanbkk.com/menu/" target="_blank" rel="noopener">睇餐廳原文餐牌 ↗</a>
+        </div>
+
+        <div class="menu">
+          <p class="menu-label">11-Course Tasting Menu</p>
+          <ol class="courses">
+            <li><span class="fr">Sraeng wa — Jellyfish | Roselle | Herbs</span><span class="tc">涼拌海蜇 — 海蜇 ｜ 洛神花 ｜ 香草</span></li>
+            <li><span class="fr">Earth and Sea — Cabbage | Scallop | Caviar</span><span class="tc">陸與海 — 椰菜 ｜ 帶子 ｜ 魚子醬</span></li>
+            <li><span class="fr">Squid with Nam Prik Pao — Squid | Ginger | Calamansi</span><span class="tc">泰式辣椒醬魷魚 — 魷魚 ｜ 薑 ｜ 金桔</span></li>
+            <li><span class="fr">Kaeng hongsa — Smoked Pork | Salted Plum | Tomato | Clear Broth</span><span class="tc">泰北 Hongsa 香料湯 — 煙燻豬肉 ｜ 話梅 ｜ 蕃茄 ｜ 清湯</span></li>
+            <li><span class="fr">Wild or Unwild — Crocodile Tongue or Beef Tongue | Yogurt | Aloe Vera</span><span class="tc">野與不野 — 鱷魚脷 或 牛脷 ｜ 乳酪 ｜ 蘆薈</span></li>
+            <li><span class="fr">Duck Curry with five spices — Khao Yai duck | Paka-Um-Pun rice | Five spice curry</span><span class="tc">五香咖喱鴨 — 考艾鴨 ｜ Paka-Um-Pun 米 ｜ 五香咖喱</span></li>
+            <li><span class="fr">Forget husband rice — Seasonal Ripe Mango | Forget husband sticky rice | Mung bean</span><span class="tc">「忘夫」糯米飯 — 時令熟芒果 ｜ 忘夫糯米 ｜ 綠豆</span></li>
+          </ol>
+
+          <div class="extras">
+            <p>可以加：</p>
+            <dl>
+              <dt>Wine pairing<span>配酒 · 4 杯</span></dt><dd>฿1,950++</dd>
+              <dt>Wine pairing<span>配酒 · 6 杯</span></dt><dd>฿2,450++</dd>
+              <dt>Tea pairing<span>配茶</span></dt><dd>฿690++</dd>
+              <dt>Juice pairing<span>配果汁</span></dt><dd>฿980++</dd>
+            </dl>
+          </div>
+
+          <p class="fineprint">餐廳只公佈咗 11 道之中呢 7 道招牌菜，其餘為小食。<br>「++」＝ 另加 7% VAT 同 10% 服務費 · 11 道菜約 2.5–3 小時 · 素食／純素同價，訂座時講低。<br>11 道菜 ฿3,850 加 4 杯酒 ฿1,950，連稅及服務費約 HK$1,550／位（匯率浮動，僅作參考）。</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -540,7 +585,9 @@ button.act:focus-visible{outline:3px solid var(--claret); outline-offset:2px}
 
   var TEXT = {
     gift:  {A:['$4,000 cash + AirPods Pro','A · $4,000'], B:['Mystery gift + AirPods Pro','B · worth $4,000']},
-    lunch: {A:['Roganic — Short Menu','A · $980 pp · wine $600'], B:['Épure — Chef’s Dégustation','B · $888 pp · wine $588']}
+    lunch: {A:['Roganic — Short Menu','A · $980 pp · wine $600'],
+            B:['Épure — Chef’s Dégustation','B · $888 pp · wine $588'],
+            C:['KHAAN Bangkok — 11 courses','C · ฿3,850++ pp · wine ฿1,950++']}
   };
 
   function render(){

@@ -8,10 +8,10 @@ Marco 送畀 Jessie 嘅生日選擇頁 — 兩條問題：禮物同生日午餐�
 
 ## 內容
 
-| 選擇 | A | B |
-| --- | --- | --- |
-| 禮物 | $4,000 現金 + AirPods Pro | 神秘禮物（價值 $4,000）+ AirPods Pro |
-| 午餐 | [Roganic](https://www.roganic.com.hk/menus) Short Menu $980 · 配酒 $600 | Épure Chef's Dégustation Lunch $888 · 配酒 $588 |
+| 選擇 | A | B | C |
+| --- | --- | --- | --- |
+| 禮物 | $4,000 現金 + AirPods Pro | 神秘禮物（$4,000）+ AirPods Pro | — |
+| 午餐 | [Roganic](https://www.roganic.com.hk/menus) Short Menu $980 · 配酒 $600 | Épure Chef's Dégustation $888 · 配酒 $588 | [KHAAN](https://www.khaanbkk.com/menu/) 曼谷 11-course ฿3,850++ · 4 杯配酒 ฿1,950++ |
 
 ## 睇
 
